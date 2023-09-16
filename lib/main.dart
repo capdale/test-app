@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_app/pages/camera/camera.dart';
 import 'package:test_app/pages/geolocation/geolocation.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [],
-    child: const MyApp(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -48,19 +46,23 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return DefaultTabController(
       initialIndex: 0,
-      length: 1,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
               Tab(
                 icon: Icon(Icons.location_on_outlined),
+              ),
+              Tab(
+                icon: Icon(Icons.camera_alt_outlined),
               )
             ],
           ),
         ),
         body: TabBarView(children: [
           GeoLocationPage(),
+          CameraPage(),
         ]),
       ),
     );
