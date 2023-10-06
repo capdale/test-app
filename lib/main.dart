@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_app/pages/auth/auth.dart';
 import 'package:test_app/pages/camera/camera.dart';
 import 'package:test_app/pages/geolocation/geolocation.dart';
 
@@ -46,7 +47,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return DefaultTabController(
       initialIndex: 0,
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           bottom: const TabBar(
@@ -56,13 +57,17 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               ),
               Tab(
                 icon: Icon(Icons.camera_alt_outlined),
-              )
+              ),
+              Tab(
+                icon: Icon(Icons.camera_alt_outlined),
+              ),
             ],
           ),
         ),
         body: TabBarView(children: [
           GeoLocationPage(),
           CameraPage(),
+          AuthPage(),
         ]),
       ),
     );
