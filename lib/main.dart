@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:test_app/pages/auth/auth.dart';
 import 'package:test_app/pages/camera/camera.dart';
 import 'package:test_app/pages/geolocation/geolocation.dart';

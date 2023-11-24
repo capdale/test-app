@@ -9,4 +9,10 @@ Generate test environment
 
 # Features
 ### GeoLocation
-Geo Location data
+Geo Location data  
+
+### Take Photo
+Take photo  
+
+### Github Oauth2
+Github Oauth   
