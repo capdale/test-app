@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: 'Test App',
         initialRoute: '/login',
         routes: {
-          '/login': (context) => const LoginPage(),
+          '/login': (context) => LoginPage(),
           '/main': (context) => const Main(),
           '/camera': (context) => CameraPage()
         },
