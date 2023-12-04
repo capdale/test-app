@@ -7,8 +7,14 @@ import 'package:test_app/pages/main/main.dart';
 import 'package:test_app/provider/collection_provier.dart';
 import 'package:test_app/provider/setting_provider.dart';
 import 'package:test_app/provider/modak_provider.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
+    SystemUiOverlay.bottom, //This line is used for showing the bottom bar
+  ]);
+
   runApp(MyApp());
 }
 
