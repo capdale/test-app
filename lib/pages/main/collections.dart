@@ -62,6 +62,7 @@ class _CollectionGridWidgetState extends State<CollectionGridWidget> {
       if (data.collections.collections.isEmpty) {
         return Text("collection is empty");
       }
+      print(data.collections);
       return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -97,8 +98,33 @@ class _CollectionWidgetState extends State<CollectionWidget> {
         } else if (snapshot.hasError) {
           return const Icon(Icons.warning);
         }
-        return Image(
-          image: FileImage(snapshot.data),
+        return TextButton(
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Material(
+                      child: Column(
+                        children: [
+                          Hero(
+                            tag: widget.collection,
+                            child: Image(
+                              image: FileImage(snapshot.data),
+                            ),
+                          ),
+                          Text("Longtitude: ${widget.collection.longtitude}"),
+                          Text("Altitude: ${widget.collection.altitude}"),
+                          Text("Latitude: ${widget.collection.latitude}"),
+                          Text("Time: ${widget.collection.originAt}"),
+                          Text("Index: ${widget.collection.index}")
+                        ],
+                      ),
+                    )));
+          },
+          child: Hero(
+            tag: widget.collection,
+            child: Image(
+              image: FileImage(snapshot.data),
+            ),
+          ),
         );
       },
     );
