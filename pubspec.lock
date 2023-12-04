@@ -341,7 +341,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "462c21173bdd302cddc8e1bcf90c9de31640912f"
+      resolved-ref: "9d343c8869bae72d3f7103322aae3ef3fadb6c7e"
       url: "git@github.com:capdale/modak-api.git"
     source: git
     version: "1.0.0"
